@@ -76,11 +76,22 @@ def register_product():
     except:
         print("** Error: make sure to enter only integers for stock and price")
 
+#def display_catalog():
+    #print_header("Current Catalog")
+    #for prod in catalog:
+        #print_product_info(prod)
+        #HOMEWORK - DISPLAY CATEGORIES IN THEIR OWN SLOTS
+
 def display_catalog():
     print_header("Current Catalog")
+    categories = []
+
     for prod in catalog:
-        print_product_info(prod)
-        #HOMEWORK - DISPLAY CATEGORIES IN THEIR OWN SLOTS
+        if prod.category not in categories:
+            categories.append(prod.category)
+
+    for cat in categories:
+        print(cat)      
  
 def display_outofstock():
     print_header("Your current Out of Stock Products")
